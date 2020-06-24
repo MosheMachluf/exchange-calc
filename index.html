@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../bootstrap.min.css" />
+    <title>Document</title>
+    <script src="js/exchange_main.js"></script>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .strip {
+        background: url(images/strip.jpg) no-repeat center bottom;
+        background-size: cover;
+        min-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="strip"></div>
+        <div class="col-5 float-left m-3">
+          <div class="form-group">
+            <label for="id_price">Put Your Price:</label>
+            <input class="form-control" type="number" id="id_price" min="1" />
+          </div>
+
+          <div class="form-group">
+            <label for="coin">From:</label>
+            <select class="form-control" id="coin">
+              <option value="USDUSD">USD</option>
+              <option value="USDILS">ILS</option>
+              <option value="USDEUR">EURO</option>
+              <option value="USDBTC">BTC</option>
+              <option value="USDTHB">THB</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="to_coin">To:</label>
+            <select class="form-control" id="to_coin">
+              <option value="USDUSD">USD</option>
+              <option value="USDILS">ILS</option>
+              <option value="USDEUR">EURO</option>
+              <option value="USDBTC">BTC</option>
+              <option value="USDTHB">THB</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" id="id_btn">Exchange</button>
+        </div>
+
+        <div class="col-5 float-left border p-4 m-5 bg-primary text-white">
+          <div id="result"><< Check your price <<</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
