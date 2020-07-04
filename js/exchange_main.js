@@ -1,7 +1,7 @@
 var json_ar;
 
 window.onload = () => {
-  doRestApi();
+  doAjax();
   declareEvents();
 };
 
@@ -33,14 +33,13 @@ const exchange = (_parent, _price, _coin, _to_coin, _coin_type) => {
   )} ${_coin_type}`;
 };
 
-const doRestApi = async () => {
+const doAjax = async () => {
   const myUrl =
     "http://apilayer.net/api/live?access_key=3c81786f9b3d2e267f40d08af97b97f2&currencies=usd%2Cils%2Ceur%2Cbtc%2Cthb&fbclid=IwAR2fHpjxNurqH86ad8vz5CPum_TubfxF_JRxd4YbB4SxgMChEurO1kFHYnI";
   try {
     let resp = await fetch(myUrl);
     let data = await resp.json();
     json_ar = data.quotes;
-    console.log(json_ar);
   } catch (err) {
     console.log(err);
   }
